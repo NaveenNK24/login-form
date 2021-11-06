@@ -131,13 +131,17 @@ function SignUp() {
             height : '70vh',
             marginTop: '13vh',
             marginLeft: '13vw',
-            border: '1px solid red',
-            position : 'fixed'}}        
+            border: '0px solid black',
+            borderRadius : '10px',
+            position : 'fixed',
+            boxShadow: '-1rem 0 3rem #24ae9e'
+            }}
+            
             sx={{
                 '& .MuiTextField-root': { m: 1, width: '25ch' },
             }}
             >
-                <Typography variant='h4' align='center' margin='2vh auto 2vh auto'>  Sign Up </Typography>
+                <Typography variant='h4' color='#114239' align='center' margin='2vh auto 2vh auto'>  Sign Up </Typography>
                 <Form style={formStyle} onSubmit={handleSubmit}>
                     <TextField 
                         error={errors.isUsernameInvalid}
@@ -145,6 +149,7 @@ function SignUp() {
                         size="small" 
                         name='userName' 
                         type = 'text'
+                        style={{ marginTop: 11 }}
                         onChange={handleInputChange}/>
                     <TextField 
                         error={errors.isEmailInvalid}
@@ -152,6 +157,7 @@ function SignUp() {
                         size="small" 
                         name='email' 
                         type = 'text'
+                        style={{ marginTop: 11 }}
                         onChange={handleInputChange}/>
                     <TextField 
                         error={errors.isPasswordInvalid}
@@ -159,6 +165,7 @@ function SignUp() {
                         size="small" 
                         name='password' 
                         type = 'password'
+                        style={{ marginTop: 11 }}
                         onChange={handleInputChange}/>
                     <TextField 
                         error={errors.isPassword2Invalid}
@@ -166,12 +173,17 @@ function SignUp() {
                         size="small" 
                         name='password2' 
                         type = 'password'
+                        style={{ marginTop: 11 }}
                         onChange={handleInputChange}/> 
                     {errors.errMsg && <Typography fontSize='10px' color='red'> {`*${errors.errMsg}` }</Typography>}
-                    <Button type="submit" variant='contained'> Create</Button>
+                    <Button type="submit" variant='outlined' color='success'  style={{ marginTop: 11 }}> 
+                    <Typography color='#0c292a'> Create </Typography>
+                    </Button>
                     <Divider/>
-                    <Typography align='center' margin='8vh auto 2vh auto'> Already have an account</Typography>
-                    <Button onClick={handleClick} variant='contained' outline='none'>Sign In</Button>  
+                    <Typography color='black' align='center' margin='2vh auto 2vh auto'>  Already have an account</Typography>
+                    <Button onClick={handleClick} variant='outlined' color='success' style={{ marginTop: 11 }}>
+                    <Typography color='#0c292a'> Sign In </Typography>
+                    </Button>  
                 </Form>
         </Container>
     )

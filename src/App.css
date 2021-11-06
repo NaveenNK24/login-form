@@ -1,6 +1,12 @@
 .App {
       height: 100vh;
-      width: 100vw;
+      width: 100vw;      
+      position: fixed;
+      flex-direction: column;
+      /* background: #72CAB4; */
+      background: #cceff3;
+      color: blanchedalmond;
+      box-shadow: -1rem 0 3rem #000;
 }
 
 

@@ -93,13 +93,17 @@ function SignIn() {
             height : '70vh',
             marginTop: '13vh',
             marginLeft: '13vw',
-            border: '1px solid red',
-            position : 'fixed'}}
+            border: '0px solid black',
+            borderRadius : '10px',
+            position : 'fixed',
+            boxShadow: '-1rem 0 3rem #24ae9e'
+            }}
+            
             sx={{
                 '& .MuiTextField-root': { m: 1, width: '25ch' },
             }}
             >
-                <Typography variant='h4' align='center' margin='2vh auto 2vh auto'>  Sign in </Typography>
+                <Typography variant='h4' color='#114239' align='center' margin='2vh auto 2vh auto'>  Sign in </Typography>
                 <Form style={formStyle} onSubmit={handleSubmit}>
                     <TextField 
                         error={errors.isUsernameInvalid}
@@ -107,6 +111,8 @@ function SignIn() {
                         size="small" 
                         name='userName' 
                         type = 'text'
+                        color="success"
+                        style={{ marginTop: 11 }}
                         onChange={handleInputChange}/>
                     <TextField 
                         error={errors.isPasswordInvalid}
@@ -114,12 +120,19 @@ function SignIn() {
                         size="small" 
                         name='password' 
                         type = 'password'
+                        color="success"
+                        style={{ marginTop: 11 }}
                         onChange={handleInputChange}/>
                     {errors.errMsg && <Typography fontSize='10px' color='red'> {`*${errors.errMsg}` }</Typography>}
-                    <Button type="submit" variant='contained'> Log in</Button>
+                    <Button type="submit" variant='outlined' style={{ marginTop: 11 }} color='success' > 
+                        <Typography color='#0c292a'> Log in </Typography>
+                    </Button>
                     <Divider/>
-                    <Typography align='center' margin='8vh auto 2vh auto'> Create a new account</Typography>
-                    <Button onClick={handleClick} variant='contained' outline='none'>Sign Up</Button>  
+                    <Typography align='center' color='black' margin='8vh auto 2vh auto' > Create a new account</Typography>
+                    <Button onClick={handleClick}  variant='outlined' color='success' >
+                        <Typography color='#0c292a'> Sign Up </Typography>
+                    
+                        </Button>  
                 </Form>
         </Container>
     )
