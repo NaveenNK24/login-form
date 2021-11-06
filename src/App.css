@@ -3,8 +3,7 @@
       width: 100vw;      
       position: fixed;
       flex-direction: column;
-      /* background: #72CAB4; */
-      background: #cceff3;
+      background: rgba(114,202,180,0.6);
       color: blanchedalmond;
       box-shadow: -1rem 0 3rem #000;
 }

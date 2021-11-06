@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container,Button, Typography } from '@mui/material'
+import { Container,Button, Typography, Divider } from '@mui/material'
 import { useHistory } from 'react-router'
 
 function SignUpSuccess() {
@@ -23,8 +23,9 @@ function SignUpSuccess() {
             }}
             >
                 <Typography variant='h4' color='#114239' align='center' margin='2vh auto 2vh auto'>  Account has been created Successfully </Typography>
-                <Typography>Click here to login</Typography>
-                <Button onClick={handleLogin} variant='outlined' color='success' style={{ marginTop: 11 }}>
+                <Divider/>
+                <Typography color='#114239' align='center' margin='2vh auto 2vh auto'>Click here to login</Typography>
+                <Button onClick={handleLogin} variant='outlined' align='center' color='success' style={{ marginTop: 11 }}>
                     <Typography color='#0c292a'> Log In</Typography>
                 </Button>
         </Container>
