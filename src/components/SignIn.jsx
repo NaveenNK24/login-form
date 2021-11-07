@@ -90,7 +90,7 @@ function SignIn() {
             }}
             >
                 <Typography variant='h4' color='#114239' align='center' margin='2vh auto 2vh auto'>  Sign in </Typography>
-                <Form style={formStyle} onSubmit={handleSubmit}>
+                <Form style={formStyle} onSubmit={handleSubmit} autocomplete="off">
                     <TextField 
                         error={errors.isUsernameInvalid}
                         label="Username" 
