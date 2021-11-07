@@ -5,6 +5,7 @@ import {    Button,Divider,     Typography } from '@mui/material';
 
 import Form from 'muicss/lib/react/form';
 import Container from 'muicss/lib/react/container';
+import { containerStyle, formStyle } from './Styles';
 
 
 function SignIn() {
@@ -69,12 +70,6 @@ function SignIn() {
         }
     }
 
-    const formStyle = {
-        display: 'flex',
-        flexDirection : 'column',
-        alignItems : 'center'
-    }
-
     const handleInputChange = (e) => {
         const {name,value} = e.target;
         setValues({
@@ -89,16 +84,7 @@ function SignIn() {
     }
 
     return (
-        <Container style={{ width: '70vw',
-            height : '70vh',
-            marginTop: '13vh',
-            marginLeft: '13vw',
-            border: '0px solid black',
-            borderRadius : '10px',
-            position : 'fixed',
-            boxShadow: '-1rem 0 3rem #24ae9e'
-            }}
-            
+        <Container style={containerStyle}            
             sx={{
                 '& .MuiTextField-root': { m: 1, width: '25ch' },
             }}

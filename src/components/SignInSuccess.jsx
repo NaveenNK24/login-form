@@ -2,6 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router'
 
 import { Container,Button, Typography, Divider } from '@mui/material'
+import { containerStyle } from './Styles';
 
 
 function SignInSuccess() {
@@ -10,15 +11,7 @@ function SignInSuccess() {
         history.push('/login-form')
     }
     return (
-        <Container style={{ width: '70vw',
-            height : '70vh',
-            marginTop: '13vh',
-            marginLeft: '13vw',
-            border: '0px solid black',
-            borderRadius : '10px',
-            position : 'fixed',
-            boxShadow: '-1rem 0 3rem #24ae9e'
-            }}
+        <Container style={containerStyle}
             sx={{
                 '& .MuiTextField-root': { m: 1, width: '25ch' },
             }}

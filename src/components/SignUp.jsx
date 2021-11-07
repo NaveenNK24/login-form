@@ -5,6 +5,7 @@ import {Button,Divider,Typography } from '@mui/material';
 
 import Form from 'muicss/lib/react/form';
 import Container from 'muicss/lib/react/container';
+import { containerStyle, formStyle } from './Styles';
 
 
 function SignUp() {
@@ -34,7 +35,7 @@ function SignUp() {
             setErrors(  prevState => ({
                 ...prevState,
                 isUsernameInvalid: true,
-                errMsg: 'Enter a valid input',
+                errMsg: 'Username is required',
             }))
             return
         }
@@ -42,15 +43,22 @@ function SignUp() {
             setErrors( prevState => ({
                 ...prevState,
                 isEmailInvalid: true,
-                errMsg: 'Enter a valid input',
+                errMsg: 'Email is required',
             }))
             return
-        } 
+        } else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)){
+            setErrors( prevState => ({
+                ...prevState,
+                isEmailInvalid: true,
+                errMsg: 'Email address is invalid',
+            }))
+            return
+        }
         if( (values.password === '' &&  values.password.length < 5 ) || values.password === '') {
             setErrors(prevState => ({
                 ...prevState,
                 isPasswordInvalid: true,
-                errMsg: 'Enter a valid input',
+                errMsg: 'Enter a Password',
             }))
             return
         }else if( values.password.length < 5 ) {
@@ -66,7 +74,7 @@ function SignUp() {
             setErrors(prevState => ({
                 ...prevState,
                 isPassword2Invalid: true,
-                errMsg: 'Enter a valid input',
+                errMsg: 'Enter a confirm Password',
             }))
             return
         }else if( values.password2.length < 5 ) {
@@ -104,12 +112,6 @@ function SignUp() {
         })
     }
 
-    const formStyle = {
-        display: 'flex',
-        flexDirection : 'column',
-        alignItems : 'center'
-    }
-
     const handleInputChange = (e) => {
         const {name,value} = e.target;
         setValues({
@@ -127,16 +129,7 @@ function SignUp() {
     }
 
     return (
-        <Container style={{ width: '70vw',
-            height : '70vh',
-            marginTop: '13vh',
-            marginLeft: '13vw',
-            border: '0px solid black',
-            borderRadius : '10px',
-            position : 'fixed',
-            boxShadow: '-1rem 0 3rem #24ae9e'
-            }}
-            
+        <Container style={containerStyle}            
             sx={{
                 '& .MuiTextField-root': { m: 1, width: '25ch' },
             }}
